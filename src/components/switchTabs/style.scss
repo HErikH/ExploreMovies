@@ -1,0 +1,39 @@
+@use '../../index.scss' as *;
+
+.switchingTabs {
+    height: 34px;
+    padding: 2px;
+    border-radius: 20px;
+    background-color: white;
+    .tab-items {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 30px;
+        &__item {
+            z-index: 1;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 100%;
+            font-size: 14px;
+            color: $black;
+            cursor: pointer;
+            transition: color ease 0.3s;
+            &.active {
+                color: white;
+            }
+        }
+        .movingBg {
+            position: absolute;
+            width: 100px;
+            height: 30px;
+            left: 0;
+            border-radius: 15px;
+            background-image: $gradient;
+            transition: left cubic-bezier(0.88, -0.35, 0.565, 1.35) 0.4s;
+        }
+    }
+}
